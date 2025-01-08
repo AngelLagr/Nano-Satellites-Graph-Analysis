@@ -27,6 +27,7 @@ def create_graph(data, max_range):
     # Ajouter les noeuds
     for index, row in data.iterrows():
         G.add_node(index, pos=(row['x'], row['y'], row['z']))
+        
     # Ajouter les arêtes si la distance est inférieure à la portée
     for i, sat1 in data.iterrows():
         for j, sat2 in data.iterrows():
@@ -34,14 +35,13 @@ def create_graph(data, max_range):
                 distance = calculate_distance(sat1, sat2)
                 if distance <= max_range:
                     G.add_edge(i, j)
-                    print("AEZAE")
     return G
 
 # Fonction pour sauvegarder le graphe 3D en tant qu'image PNG
 def save_graph_as_3d_png(G, title, filepath):
     pos = nx.get_node_attributes(G, 'pos')
 
-    fig = plt.figure(figsize=(10, 10))
+    fig = plt.figure(figsize=(25, 25))
     ax = fig.add_subplot(111, projection='3d')
     
     # Extraire les coordonnées des nœuds
@@ -51,26 +51,39 @@ def save_graph_as_3d_png(G, title, filepath):
         ys.append(y)
         zs.append(z)
     
-    # Tracer les nœuds
-    ax.scatter(xs, ys, zs, c='b', s=20, label='Satellites')
+    # Séparer les nœuds reliés et non reliés
+    connected_nodes = [node for node in G.nodes if len(list(G.neighbors(node))) > 0]
+    isolated_nodes = [node for node in G.nodes if len(list(G.neighbors(node))) == 0]
+    
+    # Tracer les nœuds reliés en bleu
+    connected_xs = [pos[node][0] for node in connected_nodes]
+    connected_ys = [pos[node][1] for node in connected_nodes]
+    connected_zs = [pos[node][2] for node in connected_nodes]
+    ax.scatter(connected_xs, connected_ys, connected_zs, c='b', s=20, label='Connected Satellites')
+
+    # Tracer les nœuds isolés en rouge
+    isolated_xs = [pos[node][0] for node in isolated_nodes]
+    isolated_ys = [pos[node][1] for node in isolated_nodes]
+    isolated_zs = [pos[node][2] for node in isolated_nodes]
+    ax.scatter(isolated_xs, isolated_ys, isolated_zs, c='r', s=20, label='Isolated Satellites')
 
     # Tracer les arêtes
     for edge in G.edges():
         x_coords = [pos[edge[0]][0], pos[edge[1]][0]]
         y_coords = [pos[edge[0]][1], pos[edge[1]][1]]
         z_coords = [pos[edge[0]][2], pos[edge[1]][2]]
-        ax.plot(x_coords, y_coords, z_coords, c='r', alpha=0.7, linewidth=1)
+        ax.plot(x_coords, y_coords, z_coords, c='purple', alpha=0.7, linewidth=1)
         
     # Configuration de l'affichage
     ax.set_title(title, fontsize=14)
-    ax.set_xlabel('X (km)')
-    ax.set_ylabel('Y (km)')
-    ax.set_zlabel('Z (km)')
+    ax.set_xlabel('X (m)')
+    ax.set_ylabel('Y (m)')
+    ax.set_zlabel('Z (m)')
     plt.legend()
     plt.savefig(filepath, format='png')
     plt.close()
 
-ranges = [20, 40, 60]
+ranges = [20000, 40000, 60000]
 
 # Processus pour chaque densité et chaque portée
 for density, file_path in file_paths.items():
