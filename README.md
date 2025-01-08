@@ -70,7 +70,8 @@ pip install -r requirements.txt
 
 ## Authors
 - **Riadh DHAOU** (Supervisor)
-- [Your Name] (Student)
+- **Angel LAGRANGE**
+- **Jack CLEMOT**
 
 ## References
 1. Evelyne Akopyan, Riadh Dhaou, Emmanuel Lochin, Bernard Pontet, Jacques Sombrin. *On the Network Characterization of Nano-Satellite Swarms.* 28th IEEE Symposium on Computers and Communications (ISCC 2023), IEEE, Jul 2023. ([Link to article](https://ieeexplore.ieee.org/document/10218020))
