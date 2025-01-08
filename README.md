@@ -22,8 +22,9 @@ NanoSatellites_GraphAnalysis/
 │   ├── part3_weighted.py      # Part 3: Weighted graph analysis
 │   └── utils.py               # Utility functions
 ├── outputs/                   # Generated results
-│   ├── images/                # Graph PNGs
-│   ├── reports/               # Analysis reports
+│   ├── part1                  # Graph PNGs from part1
+│   ├── part2                  # Graph PNGs from part2
+│   └── part3                  # Graph PNGs from part3
 ├── README.md                  # Documentation
 ├── requirements.txt           # Python dependencies
 ├── report.pdf                 # 5-page project report
