@@ -1,0 +1,22 @@
+Degré moyen (low, 20000 km): 1.8
+
+Graphique de la distribution du degré enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/low_20000km/degree_distribution.png
+
+Moyenne du degré de clustering (low, 20000 km): 0.226
+
+Graphique de la distribution du degré de clustering enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/low_20000km/clustering_distribution.png
+
+Nombre de cliques (low, 20000 km): 77
+
+Graphique de la distribution de la taille de cliques enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/low_20000km/cliques_distribution.png
+
+Nombre de composantes connexes (low, 20000 km): 39
+
+Graphique de la distribution de l'ordre des composantes connexes enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/low_20000km/components_distribution.png
+
+Longueur moyenne des plus courts chemins (sans poids sur les arrêtes) (low, 20000 km): 3.500784929356358
+
+Graphique de la distribution des plus courts chemins (sans poids sur les arrêtes) enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/low_20000km/shortest_path_distribution.png
+
+Nombre de plus courts chemins (sans poids sur les arrêtes) (low, 20000 km): 1274
+
