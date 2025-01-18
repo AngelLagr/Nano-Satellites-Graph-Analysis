@@ -28,6 +28,7 @@ NanoSatellites_GraphAnalysis/
 ├── README.md                  # Documentation
 ├── requirements.txt           # Python dependencies
 ├── report.pdf                 # 5-page project report
+├── subject.pdf                # the subject of the project
 └── video.mp4                  # 3-minute video presentation
 ```
 
