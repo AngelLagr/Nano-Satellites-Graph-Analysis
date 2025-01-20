@@ -1,0 +1,22 @@
+Degré moyen (avg, 20000 m): 3.46
+
+Graphique de la distribution du degré enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/avg_20000m/degree_distribution.png
+
+Moyenne du degré de clustering (avg, 20000 m): 0.364
+
+Graphique de la distribution du degré de clustering enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/avg_20000m/clustering_distribution.png
+
+Nombre de cliques (avg, 20000 m): 83
+
+Graphique de la distribution de la taille de cliques enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/avg_20000m/cliques_distribution.png
+
+Nombre de composantes connexes (avg, 20000 m): 22
+
+Graphique de la distribution de l'ordre des composantes connexes enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/avg_20000m/components_distribution.png
+
+Longueur moyenne des plus courts chemins (sans poids sur les arrêtes) (avg, 20000 m): 5.040330417881438
+
+Graphique de la distribution des plus courts chemins (sans poids sur les arrêtes) enregistré dans: /home/ale9578/Documents/2A/ProjetGRAPHE/outputs/part2/avg_20000m/shortest_path_distribution.png
+
+Nombre de plus courts chemins (sans poids sur les arrêtes) (avg, 20000 m): 4116
+
