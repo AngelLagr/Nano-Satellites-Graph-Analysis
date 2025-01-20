@@ -46,21 +46,21 @@ pip install -r requirements.txt
 1. **Part 1: Graph Modeling**
    - Run the script to generate graphs as PNG images:
      ```bash
-     python src/part1_graph_model.py
+     python src/part1.py
      ```
    - Images will be saved in `outputs/images/`.
 
 2. **Part 2: Unweighted Graph Analysis**
    - Execute the script:
      ```bash
-     python src/part2_unweighted.py
+     python src/part2.py
      ```
    - Results (degree, cliques, paths, etc.) will be saved in `outputs/reports/`.
 
 3. **Part 3: Weighted Graph Analysis**
    - Run the script for 60 km range with edge costs:
      ```bash
-     python src/part3_weighted.py
+     python src/part3.py
      ```
    - Results will be saved in `outputs/reports/`.
 
