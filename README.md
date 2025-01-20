@@ -64,8 +64,8 @@ pip install -r requirements.txt
      ```
    - Results will be saved in `outputs/reports/`.
 
-## Deliverables
-- **PDF Report**: 5 pages presenting the project methods and results.
+## Documentation
+- **PDF Report**: A french report presenting the project methods and results.
 - **Video Presentation**: A 3-minute video explaining conceptual choices and outcomes.
 - **Source Code**: Python scripts for graph modeling and analysis.
 
