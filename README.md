@@ -65,7 +65,6 @@ pip install -r requirements.txt
 
 ## Documentation
 - **PDF Report**: A french report presenting the project methods and results.
-- **Video Presentation**: A 3-minute video explaining conceptual choices and outcomes.
 - **Source Code**: Python scripts for graph modeling and analysis.
 
 ## Authors
