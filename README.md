@@ -28,8 +28,7 @@ NanoSatellites_GraphAnalysis/
 ├── README.md                  # Documentation
 ├── requirements.txt           # Python dependencies
 ├── report.pdf                 # My project french report
-├── subject.pdf                # The subject of the project
-└── video.mp4                  # 3-minute video presentation
+└── subject.pdf                # The subject of the project
 ```
 
 ## Prerequisites
