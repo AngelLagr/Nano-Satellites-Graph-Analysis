@@ -1,6 +1,6 @@
 # NanoSatellites Graph Analysis
 
-## Project Description
+## Description
 This project focuses on analyzing graphs that model a swarm of nanosatellites in orbit around the Moon. These nanosatellites exchange data using opportunistic routing, with adjustable communication ranges (20 km, 40 km, 60 km). The goal is to model the swarm as graphs and analyze their properties under different configurations.
 
 ### Objectives
