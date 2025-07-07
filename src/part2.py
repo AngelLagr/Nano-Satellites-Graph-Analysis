@@ -49,6 +49,7 @@ for density, file_path in file_paths.items():
         os.makedirs(case_dir, exist_ok=True)
 
         # Fichier d'analyse
+        str_frequence = 'Fréquence'
         analysis_file_path = os.path.join(case_dir, "analysis.txt")
         with open(analysis_file_path, "w") as f:
             # 1. Degré moyen
@@ -61,7 +62,7 @@ for density, file_path in file_paths.items():
             plt.hist(degrees, bins=range(min(degrees), max(degrees) + 1), alpha=0.75)
             plt.title(f'Distribution du degré ({density}, {max_range} m)')
             plt.xlabel('Degré')
-            plt.ylabel('Fréquence')
+            plt.ylabel(str_frequence)
             plt.savefig(degree_hist_file)
             plt.close()
             f.write(f"Graphique de la distribution du degré enregistré dans: {degree_hist_file}\n\n")
@@ -75,7 +76,7 @@ for density, file_path in file_paths.items():
             plt.hist(clustering, bins=20, alpha=0.75)
             plt.title(f'Distribution du degré de clustering ({density}, {max_range} m)')
             plt.xlabel('Degré de clustering')
-            plt.ylabel('Fréquence')
+            plt.ylabel(str_frequence)
             plt.savefig(clustering_hist_file)
             plt.close()
             f.write(f"Graphique de la distribution du degré de clustering enregistré dans: {clustering_hist_file}\n\n")
@@ -88,7 +89,7 @@ for density, file_path in file_paths.items():
             plt.hist(cliques_sizes, bins=20, alpha=0.75)
             plt.title(f'Distribution des de cliques ({density}, {max_range} m)')
             plt.xlabel('Tailles des cliques')
-            plt.ylabel('Fréquence')
+            plt.ylabel(str_frequence)
             plt.savefig(cliques_hist_file)
             plt.close()
             f.write(f"Graphique de la distribution de la taille de cliques enregistré dans: {cliques_hist_file}\n\n")
@@ -101,7 +102,7 @@ for density, file_path in file_paths.items():
             plt.hist(components_sizes, bins=20, alpha=0.75)
             plt.title(f'Distribution de la taille des composantes connexes ({density}, {max_range} m)')
             plt.xlabel('Tailles des cliques')
-            plt.ylabel('Fréquence')
+            plt.ylabel(str_frequence)
             plt.savefig(components_hist_file)
             plt.close()
             f.write(f"Graphique de la distribution de l'ordre des composantes connexes enregistré dans: {components_hist_file}\n\n")
@@ -123,7 +124,7 @@ for density, file_path in file_paths.items():
             plt.hist(shortest_paths_lengths, bins=20, alpha=0.75)
             plt.title(f'Distribution des plus courts chemins (sans poids sur les arrêtes) ({density}, {max_range} m)')
             plt.xlabel('Longueur du chemin')
-            plt.ylabel('Fréquence')
+            plt.ylabel(str_frequence)
             plt.savefig(shortest_path_hist_file)
             plt.close()
             f.write(f"Graphique de la distribution des plus courts chemins (sans poids sur les arrêtes) enregistré dans: {shortest_path_hist_file}\n\n")

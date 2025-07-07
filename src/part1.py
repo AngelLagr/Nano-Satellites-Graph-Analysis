@@ -23,10 +23,10 @@ def calculate_distance(sat1, sat2):
 
 # Fonction pour créer un graphe basé sur les positions et la portée
 def create_graph(data, max_range):
-    G = nx.Graph()
+    graph = nx.Graph()
     # Ajouter les noeuds
     for index, row in data.iterrows():
-        G.add_node(index, pos=(row['x'], row['y'], row['z']))
+        graph.add_node(index, pos=(row['x'], row['y'], row['z']))
         
     # Ajouter les arêtes si la distance est inférieure à la portée
     for i, sat1 in data.iterrows():
@@ -34,12 +34,12 @@ def create_graph(data, max_range):
             if i < j:  # éviter de recalculer pour j < i
                 distance = calculate_distance(sat1, sat2)
                 if distance <= max_range:
-                    G.add_edge(i, j)
-    return G
+                    graph.add_edge(i, j)
+    return graph
 
 # Fonction pour sauvegarder le graphe 3D en tant qu'image PNG
-def save_graph_as_3d_png(G, title, filepath):
-    pos = nx.get_node_attributes(G, 'pos')
+def save_graph_as_3d_png(graph, title, filepath):
+    pos = nx.get_node_attributes(graph, 'pos')
 
     fig = plt.figure(figsize=(25, 25))
     ax = fig.add_subplot(111, projection='3d')
@@ -52,8 +52,8 @@ def save_graph_as_3d_png(G, title, filepath):
         zs.append(z)
     
     # Séparer les nœuds reliés et non reliés
-    connected_nodes = [node for node in G.nodes if len(list(G.neighbors(node))) > 0]
-    isolated_nodes = [node for node in G.nodes if len(list(G.neighbors(node))) == 0]
+    connected_nodes = [node for node in graph.nodes if len(list(graph.neighbors(node))) > 0]
+    isolated_nodes = [node for node in graph.nodes if len(list(graph.neighbors(node))) == 0]
     
     # Tracer les nœuds reliés en bleu
     connected_xs = [pos[node][0] for node in connected_nodes]
@@ -68,7 +68,7 @@ def save_graph_as_3d_png(G, title, filepath):
     ax.scatter(isolated_xs, isolated_ys, isolated_zs, c='r', s=20, label='Isolated Satellites')
 
     # Tracer les arêtes
-    for edge in G.edges():
+    for edge in graph.edges():
         x_coords = [pos[edge[0]][0], pos[edge[1]][0]]
         y_coords = [pos[edge[0]][1], pos[edge[1]][1]]
         z_coords = [pos[edge[0]][2], pos[edge[1]][2]]
@@ -89,10 +89,10 @@ ranges = [20000, 40000, 60000]
 for density, file_path in file_paths.items():
     data = pd.read_csv(file_path)
     for max_range in ranges:
-        G = create_graph(data, max_range)
+        graph = create_graph(data, max_range)
         # Construire un nom de fichier lisible
         filename = f'swarm_{density}_density_{max_range}m.png'
         filepath = os.path.join(output_dir, filename)
         title = f'Density: {density.capitalize()} - Range: {max_range} km'
-        save_graph_as_3d_png(G, title, filepath)
+        save_graph_as_3d_png(graph, title, filepath)
         print(f"3D Graph saved: {filepath}")
